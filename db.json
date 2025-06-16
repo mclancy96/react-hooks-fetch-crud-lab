@@ -65,17 +65,6 @@
         "controlled"
       ],
       "correctIndex": 1
-    },
-    {
-      "prompt": "How is this working",
-      "answers": [
-        "great",
-        "not great",
-        "so great",
-        "it's not"
-      ],
-      "correctIndex": 0,
-      "id": 7
     }
   ]
 }

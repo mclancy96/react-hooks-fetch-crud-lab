@@ -8,9 +8,8 @@ function QuestionForm() {
     answer3: "",
     answer4: "",
     correctIndex: 0,
-  }
+  };
   const [formData, setFormData] = useState(defaultFormState);
-
 
   function handleChange(event) {
     setFormData({
@@ -21,12 +20,23 @@ function QuestionForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const { prompt, answer1, answer2, answer3, answer4 } = formData
+    const { prompt, answer1, answer2, answer3, answer4, correctIndex } =
+      formData;
     if (prompt && answer1 && answer2 && answer3 && answer4) {
-      fetch('http://localhost:4000/questions', { method: 'POST', headers: { "Content-Type": "application/json" }, body: JSON.stringify(formData) })
-        .then(setFormData(defaultFormState)).catch(console.error)
+      const formatedFormData = {
+        prompt,
+        answers: [answer1, answer2, answer3, answer4],
+        correctIndex,
+      };
+      fetch("http://localhost:4000/questions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formatedFormData),
+      })
+        .then(setFormData(defaultFormState))
+        .catch(console.error);
     } else {
-      console.log('Please fill out all fields in order to create question.')
+      console.log("Please fill out all fields in order to create question.");
     }
   }
 

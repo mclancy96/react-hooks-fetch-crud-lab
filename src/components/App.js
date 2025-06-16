@@ -13,7 +13,7 @@ function App() {
       .then(data => setQuestions(data))
   }
 
-  useEffect(getAllQuestions, [])
+  useEffect(getAllQuestions, [page])
 
   return (
     <main>

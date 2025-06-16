@@ -1,14 +1,6 @@
 import QuestionItem from './QuestionItem'
-import { useState, useEffect } from 'react'
 
-function QuestionList() {
-  const [questions, setQuestions] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:4000/questions')
-      .then(r => r.json())
-      .then(data => setQuestions(data))
-  }, [])
+function QuestionList({ questions }) {
   return (
     <section>
       <h1>Quiz Questions</h1>

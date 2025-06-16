@@ -9,7 +9,7 @@
         "key",
         "prop"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
         "onChange",
         "onForm"
       ],
-      "correctIndex": 0
+      "correctIndex": 2
     },
     {
       "id": 4,
